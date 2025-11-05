@@ -14,5 +14,4 @@ type User struct {
 	PointBalance int    `json:"point_balance" gorm:"column:point_balance"`
 	RoleID       int    `json:"role_id" gorm:"column:role_id"`
 	Role         Role   `json:"role" gorm:"foreignKey:RoleID"`
-	Last		string
 }
