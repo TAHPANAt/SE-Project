@@ -1,0 +1,59 @@
+/* src/index.css (ฉบับแก้ไข) */
+
+/* 1. ตั้งค่า Font และสีพื้นฐาน (Light Mode) */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* ตั้งค่าสีเริ่มต้นเป็น Light Mode ให้ตรงกับดีไซน์ */
+  color: #213547;
+  background-color: #ffffff; /* พื้นหลังหน้าเว็บหลัก */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2. CSS Reset ที่จำเป็น (สำคัญมาก) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. แก้ไข Body (เอา Flexbox ออก) */
+body {
+  min-height: 100vh;
+  /* นี่คือสีพื้นหลังเทาอ่อนๆ ที่เราใช้ใน HomePage */
+  background-color: #f8f9fa; 
+  /* ลบ 3 บรรทัดนี้ออก:
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+  */
+}
+
+/* 4. ตั้งค่า Link และ Button พื้นฐาน (เพื่อให้เข้ากับธีม) */
+a {
+  font-weight: 500;
+  color: #007bff; /* สีน้ำเงินหลักของธีม */
+  text-decoration: none; /* เอาขีดเส้นใต้ออก */
+}
+a:hover {
+  color: #0056b3;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  transition: all 0.25s;
+}
+
+/* ลบ Dark Mode @media query ออกไปก่อน เพื่อให้ Light Mode เป็นค่าหลัก */

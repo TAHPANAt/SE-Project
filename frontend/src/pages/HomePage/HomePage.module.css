@@ -1,0 +1,280 @@
+/* src/pages/HomePage/HomePage.module.css */
+
+.container {
+  width: 100%;
+}
+
+/* --- 1. Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px; /* ลด Padding สำหรับมือถือ */
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.navbarBrand {
+  font-size: 22px;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.navbarNav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ซ่อนลิงก์ใน Navbar บนมือถือ (ปกติจะใช้ Hamburger Menu) */
+.navLink {
+  display: none; 
+}
+
+.navButton {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.registerButton {
+  background-color: #28a745;
+  color: white;
+}
+.registerButton:hover {
+  background-color: #218838;
+}
+
+.loginButton {
+  background-color: transparent;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+.loginButton:hover {
+  background-color: #e7f3ff;
+}
+
+/* --- 2. Hero Section --- */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* 90% ของความสูงจอ */
+  background-image: url('../../assets/campus-building.jpg'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding-top: 60px; /* Offset สำหรับ fixed navbar */
+}
+
+.heroOverlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.heroTitle {
+  font-size: 2.5em; /* ลดขนาดสำหรับมือถือ */
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.heroSubtitle {
+  font-size: 1.1em;
+  max-width: 600px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: column; /* เรียงปุ่มแนวตั้งบนมือถือ */
+  gap: 15px;
+}
+
+.heroButton {
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.heroButton:hover {
+  transform: scale(1.05);
+}
+
+.heroRegisterButton {
+  background-color: #28a745;
+  color: white;
+}
+.heroRegisterButton:hover {
+  background-color: #218838;
+}
+
+.heroLoginButton {
+  background-color: #007bff;
+  color: white;
+}
+.heroLoginButton:hover {
+  background-color: #0056b3;
+}
+
+/* --- 3. Wrapper (ตัวจัดกลางเนื้อหา) --- */
+.wrapper {
+  width: 100%;
+  max-width: 1200px; /* จำกัดความกว้างเนื้อหา */
+  margin: 0 auto; /* จัดกลาง */
+  padding: 60px 20px;
+}
+
+/* --- 4. Features Section --- */
+.featuresSection {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.featuresTitle {
+  font-size: 2em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.featuresSubtitle {
+  font-size: 1.1em;
+  color: #6c757d;
+  margin-bottom: 40px;
+}
+
+.featureCardsContainer {
+  display: flex;
+  flex-direction: column; /* เรียงแนวตั้งบนมือถือ */
+  justify-content: center;
+  gap: 30px;
+}
+
+.featureCard {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.featureIcon {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.featureCardTitle {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.featureCardText {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* --- 5. CTA Section --- */
+.ctaSection {
+  background-color: #e9ecef;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: 2em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.ctaSubtitle {
+  font-size: 1.1em;
+  color: #6c757d;
+  margin-bottom: 40px;
+}
+
+.ctaButton {
+  background-color: #28a745;
+  color: white;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-size: 1.2em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.ctaButton:hover {
+  background-color: #218838;
+}
+
+/* --- 🌟 MEDIA QUERIES (Responsive Design) 🌟 --- 
+นี่คือส่วนที่ทำให้เป็น "มาตรฐานเว็บ"
+*/
+
+/* สำหรับ Tablet (768px) ขึ้นไป */
+@media (min-width: 768px) {
+  .navbar {
+    padding: 15px 50px;
+  }
+  .navLink {
+    display: inline-block; /* แสดงลิงก์ */
+    font-size: 16px;
+    margin: 0 15px;
+  }
+  .navButton {
+    font-size: 16px;
+    padding: 8px 18px;
+  }
+
+  .heroTitle {
+    font-size: 3.5em;
+  }
+  .heroActions {
+    flex-direction: row; /* เรียงปุ่มแนวนอน */
+    gap: 20px;
+  }
+  
+  .featuresTitle, .ctaTitle {
+    font-size: 2.5em;
+  }
+  
+  .featureCardsContainer {
+    flex-direction: row; /* เรียง Card แนวนอน */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .featureCard {
+     width: 300px; /* กำหนดความกว้างคงที่ */
+  }
+}

@@ -1,0 +1,21 @@
+/* src/pages/authentication/Register/RegisterPage.module.css */
+
+/* เราจะใช้สไตล์เดียวกับหน้า Login โดยตรง
+  นี่คือวิธีที่สะอาดที่สุด
+*/
+@import url('../Login/LoginPage.module.css');
+
+/* ถ้าต้องการปรับแต่งเฉพาะหน้า Register ให้เพิ่มที่นี่ */
+.submitButton {
+    /* ตัวอย่าง: ถ้าต้องการให้ปุ่ม Register เป็นสีเขียว */
+    background-color: #28a745; /* สีเขียว */
+}
+.submitButton:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+.successMessage {
+  color: #28a745; /* สีเขียว */
+  margin-bottom: 15px;
+  font-weight: 500;
+}

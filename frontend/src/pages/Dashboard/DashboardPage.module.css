@@ -1,0 +1,215 @@
+/* src/pages/Dashboard/DashboardPage.module.css */
+
+/* --- 1. Layout (เหมือนในรูป แต่ไม่มี Sidebar ซ้าย) --- */
+.dashboardPage {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- 2. Main Content Area --- */
+.mainContent {
+    background-color: transparent;
+}
+
+.sectionContainer {
+    margin-bottom: 30px;
+}
+
+.sectionTitle {
+    font-size: 1.5em; /* 24px */
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+/* --- Search Bar --- */
+.searchBarContainer {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 30px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.searchBarContainer span {
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: #6c757d;
+}
+
+.searchInput {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1em;
+    background-color: transparent;
+}
+
+/* --- Category Nav --- */
+.categoryNav {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto; 
+    padding-bottom: 10px;
+}
+
+.categoryLink {
+    padding: 8px 18px;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    background-color: white;
+    color: #495057;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap; 
+}
+
+.categoryLink:hover {
+    background-color: #e9ecef;
+}
+
+.categoryLinkActive {
+    background-color: #007bff; 
+    color: white;
+    border-color: #007bff;
+}
+
+/* --- Item Grid --- */
+.itemGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.itemCard {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    overflow: hidden; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.itemCard:hover {
+    transform: translateY(-5px);
+}
+
+.itemImageWrapper {
+    width: 100%;
+    height: 150px; 
+    background-color: #f0f0f0;
+}
+.itemImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.itemCardContent {
+    padding: 15px;
+}
+.itemTitle {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.itemCategory {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* 🌟 FIX: เพิ่มสไตล์สำหรับ สภาพ (Condition) 🌟 */
+.itemCondition {
+    font-size: 0.85em; 
+    color: #343a40; 
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+
+/* --- Activity Sidebar --- */
+.activitySidebar {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.activityFeed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.activityItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.activityIcon {
+    font-size: 1.5em;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+}
+
+.activityText {
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+.activityTime {
+    font-size: 0.85em;
+    color: #6c757d;
+}
+
+/* --- Floating Action Button (FAB) --- */
+.fab {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; 
+    
+    background-color: #20c997; 
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 900;
+}
+.fab:hover {
+    transform: scale(1.05);
+    background-color: #1baa80;
+}
+
+/* --- 🌟 MEDIA QUERIES (Responsive Design) 🌟 --- */
+@media (min-width: 1024px) {
+    .dashboardPage {
+        grid-template-columns: 2.5fr 1fr; /* เนื้อหาหลักกว้างกว่า */
+    }
+    
+    .activitySidebar {
+        max-height: none; 
+        position: sticky; 
+        top: 90px; /* 70px (Navbar) + 20px (Gap) */
+    }
+}

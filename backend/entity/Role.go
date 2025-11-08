@@ -1,10 +1,8 @@
 package entity
 
-import (
-	"gorm.io/gorm"
-)
+import "gorm.io/gorm"
 
 type Role struct{
-	gorm.Model
-	RoleName string `json:"role_name" gorm:"column:role_name"`
+    gorm.Model
+    RoleName string `json:"role_name" gorm:"column:role_name;unique;not null"`
 }

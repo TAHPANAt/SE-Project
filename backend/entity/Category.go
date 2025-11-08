@@ -1,10 +1,8 @@
 package entity
 
-import (
-	"gorm.io/gorm"
-)
+import "gorm.io/gorm"
 
 type Category struct {
-	gorm.Model
-	CategoryName string `json:"category_name" gorm:"column:category_name"`
+    gorm.Model
+    Name string `json:"name" gorm:"unique;not null"` // เปลี่ยน CategoryName เป็น Name ให้ตรงกับ db.go
 }

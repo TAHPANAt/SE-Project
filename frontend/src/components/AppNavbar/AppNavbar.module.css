@@ -1,0 +1,196 @@
+/* src/components/AppNavbar/AppNavbar.module.css */
+
+/* --- Global Wrapper (ยืมมาจาก Dashboard) --- */
+.wrapper {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+    /* 🌟 เพิ่ม: ทำให้ wrapper ใน Navbar ทำงานถูกต้อง 🌟 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* --- Dashboard Navbar (ที่แยกออกมา) --- */
+.dashboardNavbar {
+    display: flex;
+    align-items: center;
+    padding: 15px 0; 
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999; 
+    box-sizing: border-box;
+    height: 70px; /* 🌟 กำหนดความสูงคงที่ 🌟 */
+}
+
+.dashboardBrand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #343a40;
+    cursor: pointer; /* 🌟 เพิ่ม: ทำให้คลิกได้ 🌟 */
+}
+
+.dashboardNavActions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.welcomeText {
+    font-size: 16px;
+    color: #6c757d;
+    font-weight: 500;
+    display: none; /* ซ่อนบนมือถือ */
+}
+
+.logoutButton {
+    padding: 8px 18px;
+    border-radius: 5px;
+    border: 1px solid #dc3545; 
+    background-color: transparent;
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.logoutButton:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* 🌟 Media Query (จาก Dashboard) 🌟 */
+@media (min-width: 768px) {
+    .welcomeText {
+        display: inline-block; /* แสดงบน Tablet/Desktop */
+    }
+}
+
+/* src/components/AppNavbar/AppNavbar.module.css */
+
+/* ... (โค้ด .wrapper, .dashboardNavbar, .dashboardBrand คงเดิม) ... */
+.wrapper {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.dashboardNavbar {
+    /* ... */
+    height: 70px; 
+}
+.dashboardBrand {
+    /* ... */
+    cursor: pointer;
+}
+
+/* 🌟 ลบ .dashboardNavActions (เราใช้ .profileContainer แทน) 🌟 */
+
+.welcomeText {
+    /* (สไตล์นี้ถูกย้ายไป .profileButton) */
+}
+
+/* 🌟 ลบ .logoutButton (เราใช้ .logoutItem แทน) 🌟 */
+
+/* 🌟 --- START: สไตล์ใหม่สำหรับ Profile Dropdown --- 🌟 */
+
+/* 1. ตัวครอบปุ่มโปรไฟล์และเมนู (เพื่อให้เมนูยึดติดกับปุ่ม) */
+.profileContainer {
+    position: relative; /* สำคัญมากสำหรับ Dropdown */
+    display: flex;
+    align-items: center;
+}
+
+/* 2. ปุ่มที่คลิกเพื่อเปิดเมนู (Hello, User!) */
+.profileButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #495057; /* สีเทาเข้ม */
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.profileButton:hover {
+    background-color: #f0f2f5; /* สีเทาอ่อนเมื่อชี้ */
+}
+
+.arrowIcon {
+    font-size: 0.7em;
+    transform: translateY(1px);
+}
+
+/* 3. กล่อง Dropdown Menu */
+.dropdownMenu {
+    position: absolute;
+    top: 50px; /* ระยะห่างจากปุ่มด้านบน */
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    width: 200px;
+    z-index: 1001; /* ให้อยู่เหนือเนื้อหาอื่น */
+    padding: 8px 0;
+    overflow: hidden;
+}
+
+/* 4. รายการเมนู (My Profile, My Items, Logout) */
+.dropdownItem {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdownItem:hover {
+    background-color: #f8f9fa; /* สีพื้นหลังเมื่อชี้ */
+}
+
+/* 5. เส้นคั่น */
+.dropdownSeparator {
+    height: 1px;
+    background-color: #e9ecef;
+    margin: 8px 0;
+}
+
+/* 6. ปุ่ม Logout (สีแดง) */
+.logoutItem {
+    color: #dc3545; /* สีแดง */
+    font-weight: 600;
+}
+
+.logoutItem:hover {
+    background-color: #fdf2f2;
+}
+
+/* 🌟 --- END: สไตล์ใหม่ --- 🌟 */
+
+
+/* 🌟 Media Query (ถ้าต้องการให้ Hello, User แสดงบนมือถือ) 🌟 */
+@media (min-width: 768px) {
+    /* ถ้าต้องการให้ข้อความ Hello, User แสดงเฉพาะ Desktop 
+       ให้ใส่ .welcomeText { display: inline-block; } ที่นี่
+       แต่ในดีไซน์นี้ เราจะแสดงปุ่ม Profile ตลอดเวลา
+    */
+}

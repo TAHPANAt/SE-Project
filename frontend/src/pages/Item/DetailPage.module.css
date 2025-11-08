@@ -1,0 +1,184 @@
+/* src/pages/Item/DetailPage.module.css */
+
+.pageContainer {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.backButton {
+    background: #f0f2f5;
+    border: 1px solid #ced4da;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+.backButton:hover {
+    background-color: #e9ecef;
+}
+
+.detailLayout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Image Section */
+.imageSection {
+    width: 100%;
+}
+.mainImage {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+/* 🌟 --- ( BEGIN ) ส่วนที่เพิ่มเข้ามาสำหรับ Gallery --- 🌟 */
+
+/* แถบแสดงรูปภาพขนาดย่อ */
+.thumbnailGallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap; /* ทำให้ปัดขึ้นบรรทัดใหม่ถ้ารูปเยอะ */
+}
+
+/* รูปขนาดย่อแต่ละรูป */
+.thumbnail {
+    width: 80px;  /* ขนาด thumbnail */
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid transparent; /* กรอบใสๆ */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.thumbnail:hover {
+    border-color: #ddd; /* สีเทาอ่อนเมื่อเอาเมาส์ชี้ */
+}
+
+/* Style สำหรับรูปขนาดย่อที่ถูกเลือก (Active) */
+.thumbnailActive {
+    border-color: #007bff; /* สีน้ำเงิน (สีเดียวกับปุ่ม Edit) 
+        เพื่อให้รู้ว่ากำลังเลือกรูปนี้อยู่
+    */
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+/* 🌟 --- ( END ) ส่วนที่เพิ่มเข้ามาสำหรับ Gallery --- 🌟 */
+
+
+/* Info Section */
+.infoSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.tagGroup {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.tag {
+    background-color: #e7f3ff;
+    color: #0056b3;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.infoBlock {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f2f5;
+    padding-bottom: 20px;
+}
+.infoBlock h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.infoBlock p {
+    font-size: 1em;
+    color: #495057;
+    line-height: 1.6;
+}
+
+/* Action Buttons */
+.actionButtons {
+    display: flex;
+    gap: 15px;
+    margin-top: auto; /* ดันปุ่มไปล่างสุด */
+}
+.contactButton {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background-color: #20c997; /* สีเขียวมินต์ */
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.contactButton:hover {
+    background-color: #1baa80;
+}
+
+.editButton {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background-color: #007bff; /* สีน้ำเงิน */
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.editButton:hover {
+     background-color: #0056b3;
+}
+
+.deleteButton {
+    padding: 12px 25px;
+    border: 1px solid #dc3545;
+    border-radius: 30px;
+    background-color: white;
+    color: #dc3545;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.deleteButton:hover {
+     background-color: #fdf2f2;
+}
+
+
+/* Responsive */
+@media (min-width: 768px) {
+    .detailLayout {
+        grid-template-columns: 1fr 1fr; /* 2 columns */
+    }
+    .mainImage {
+        max-height: 500px;
+    }
+}

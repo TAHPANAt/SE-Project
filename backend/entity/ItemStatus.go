@@ -1,10 +1,8 @@
 package entity
 
-import (
-	"gorm.io/gorm"
-)
+import "gorm.io/gorm"
 
 type ItemStatus struct {
-	gorm.Model
-	StatusName string `json:"status_name" gorm:"column:status_name"`
+    gorm.Model
+    StatusName string `json:"status_name" gorm:"column:status_name;unique;not null"`
 }
